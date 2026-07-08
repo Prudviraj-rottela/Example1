@@ -4,3 +4,4 @@ Test repository for the Docker Image Drift Agent.
 
 This repo contains a sample Dockerfile and Kubernetes deployment used to validate
 PR-triggered image drift detection, Trivy scanning, and policy enforcement.
+# trigger scan

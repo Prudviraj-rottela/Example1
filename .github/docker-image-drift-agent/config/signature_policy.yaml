@@ -1,0 +1,20 @@
+# Image signature verification policy
+
+require_signatures: true
+
+# Trusted signers (cosign keyless or key-based)
+trusted_identities:
+  - issuer: https://token.actions.githubusercontent.com
+    subject: "https://github.com/my-org/.github/workflows/*"
+  - issuer: https://accounts.google.com
+    subject: "serviceAccount:signer@my-project.iam.gserviceaccount.com"
+
+# Repositories exempt from signature checks (internal mirrors only)
+exempt_repositories:
+  - docker.io/library/alpine
+
+# Action when signature is missing or invalid
+unsigned_action: block
+
+# Action when digest is not pinned (tag-only reference)
+unpinned_action: warn
